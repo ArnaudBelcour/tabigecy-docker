@@ -1,8 +1,6 @@
 FROM ubuntu:latest
 LABEL Description="EsMeCaTa docker image"
 
-ARG MAMBA_DOCKERFILE_ACTIVATE=1
-
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     python3-pip \
