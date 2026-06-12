@@ -45,7 +45,7 @@ RUN curl -s https://get.nextflow.io | bash ;\
     chmod +x nextflow ;\
     mv nextflow /programs/bin
 
-# Clone esmecata, tabigecy and orsum
+# Clone esmecata, tabigecy, bigecyhmm and orsum
 RUN cd /programs;\
     git clone https://github.com/AuReMe/esmecata.git ;\
     git clone https://github.com/ArnaudBelcour/tabigecy.git ;\
@@ -64,9 +64,6 @@ RUN cd programs;\
     pip install -e . ;\
     cd ../bigecyhmm ;\
     pip install -e .
-
-# Install version of pyhmmer to avoid issue with bigecyhmm 0.1.8
-RUN pip install pyhmmer==0.11.1
 
 # Download esmecata precomputed database and NCBI taxonomy database
 RUN cd /programs;\
