@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
     libxkbcommon0 \
     libpango-1.0-0 \
     libcairo2 \
+    graphviz \
+    graphviz-dev \
     libasound2
 
 # Install brew
@@ -31,7 +33,7 @@ RUN brew install mmseqs2
 
 # Install all python dependencies with pip
 RUN pip install pip --upgrade
-RUN pip install pandas sparqlwrapper requests biopython eggnog-mapper biopython bioservices arakawa gseapy plotly kaleido ontosunburst pronto seaborn networkx
+RUN pip install pandas sparqlwrapper requests biopython eggnog-mapper biopython bioservices arakawa gseapy plotly kaleido ontosunburst pronto seaborn networkx scipy statsmodels pygraphviz
 
 # Install Google Chrome for plotly
 RUN plotly_get_chrome -y
