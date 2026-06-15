@@ -33,7 +33,7 @@ RUN brew install mmseqs2
 
 # Install all python dependencies with pip
 RUN pip install pip --upgrade
-RUN pip install pandas sparqlwrapper requests biopython eggnog-mapper biopython bioservices arakawa gseapy plotly kaleido ontosunburst pronto seaborn networkx scipy statsmodels pygraphviz
+RUN pip install pandas sparqlwrapper requests biopython eggnog-mapper biopython bioservices arakawa gseapy plotly kaleido ontosunburst pronto seaborn networkx scipy statsmodels pygraphviz pytest
 
 # Install Google Chrome for plotly
 RUN plotly_get_chrome -y
@@ -69,7 +69,8 @@ RUN cd programs;\
 
 # Download esmecata precomputed database and NCBI taxonomy database
 RUN cd /programs;\
-    wget https://zenodo.org/records/13354073/files/esmecata_database.zip;\
+    wget https://zenodo.org/records/13354073/files/esmecata_database.zip ;\
+    wget https://zenodo.org/records/17224194/files/esmecata_database_phyla.zip ;\
     wget https://zenodo.org/records/13354073/files/taxdmp_2024-10-01.tar.gz
 
 # Preload NCBI Taxonomy database in ete4
